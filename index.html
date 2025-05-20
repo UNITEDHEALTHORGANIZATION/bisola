@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Stop form from submitting initially
+
+            const email = document.getElementById("email").value.trim();
+            const accessCode = document.getElementById("accessCode").value.trim();
+
+            if (email === "" || accessCode === "") {
+                alert("Please enter both your email and access code.");
+                return false;
+            }
+
+            // Redirect to another page in the same folder
+            window.location.href = "dashboard.html"; // Change to your desired file
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <img src="./img-log/nl.png" alt="" style="margin-left: -1.5rem;">
+            <form class="form" onsubmit="validateForm(event)">
+                <input type="email" id="email" class="input" placeholder="Email Address">
+                <input type="password" id="accessCode" class="input" placeholder="Access Code">
+                <p class="page-link">
+                    <span class="page-link-label"><a href="./forget.html">Forgot Access code?</a></span>
+                </p>
+                <button type="submit" class="form-btn">Log in</button>
+            </form>
+            <p class="sign-up-label" style="text-align: center;">
+                Don't have an account?<span class="sign-up-link"><a href="https://unitedhealth-organization.surge.sh/">Visit Site</a></span>
+            </p>
+            
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025</p>
+        <p>User Agreement</p>
+        <p>Privacy Policy</p>
+    </footer>
+</body>
+
+</html>
